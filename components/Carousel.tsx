@@ -21,22 +21,20 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
 
   return (
     <motion.div
-      className="relative cursor-pointer mx-4"
+      className="relative cursor-pointer  mx h-[300px]"
       onMouseEnter={toggleExpand}
       onMouseLeave={toggleExpand}
       initial={{ width: 'auto' }}
-      animate={{ width: isExpanded ? '48rem' : '16rem' }}
+      animate={{ width: isExpanded ? '24rem' : '15rem' }}
       transition={{ duration: 0.5 }}
     >
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="border rounded-3xl   absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${image})` }}
       />
-      <div className="absolute inset-0 bg-black opacity-50" />
+      <div className="absolute inset-0  opacity-0" />
       <div className="relative z-10 text-white p-4">
-        <h3 className="text-2xl font-bold mb-2 border-b-2 border-white pb-1">
-          {title}
-        </h3>
+
         <AnimatePresence>
           {isExpanded && (
             <motion.div
@@ -45,6 +43,9 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
               exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.3 }}
             >
+              <h3 className="text-2xl font-bold mb-2 border-b-2 border-white pb-1">
+                {title}
+              </h3>
               <p className="mb-4">{description}</p>
               <button className="bg-white text-black py-2 px-4 rounded-md">
                 See More
@@ -60,37 +61,37 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
 const Carousel: React.FC = () => {
   const carouselCards = [
     {
-      image: '/card1.jpg',
+      image: '/images/card1.webp',
       title: 'Card 1',
       description: 'This is the description for Card 1.',
     },
     {
-      image: '/card2.jpg',
+      image: '/images/card2.webp',
       title: 'Card 2',
       description: 'This is the description for Card 2.',
     },
     {
-      image: '/card2.jpg',
+      image: '/images/card1.webp',
       title: 'Card 2',
       description: 'This is the description for Card 2.',
     },
     {
-      image: '/card2.jpg',
+      image: '/images/card2.webp',
       title: 'Card 2',
       description: 'This is the description for Card 2.',
     },
     {
-      image: '/card2.jpg',
+      image: '/images/card1.webp',
       title: 'Card 2',
       description: 'This is the description for Card 2.',
     },
     {
-      image: '/card2.jpg',
+      image: '/images/card2.webp',
       title: 'Card 2',
       description: 'This is the description for Card 2.',
     },
     {
-      image: '/card2.jpg',
+      image: '/images/card1.webp',
       title: 'Card 2',
       description: 'This is the description for Card 2.',
     },
@@ -116,7 +117,7 @@ const Carousel: React.FC = () => {
   }, [carouselControls, carouselCards]);
 
   return (
-    <div className="container mx-auto py-8 overflow-hidden">
+    <div className=" bg-white mx-auto py-8  overflow-hidden">
       <motion.div
         className="inline-flex whitespace-nowrap"
         ref={carouselRef}

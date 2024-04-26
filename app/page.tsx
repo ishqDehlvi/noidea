@@ -2,6 +2,12 @@ import React from 'react';
 import Header from '@/components/Header';
 import Carousel from '@/components/Carousel';
 import { StickyScroll } from '@/components/StickyScrollReveal';
+import StackCards from '@/components/StackCards';
+import HeroSection from '@/components/Hero';
+
+
+
+
 
 const contentData = [
   {
@@ -34,11 +40,28 @@ const contentData = [
 ];
 
 const HomePage: React.FC = () => {
+
+  // const stackContent = [
+  //   { title: 'Card 1', description: 'This is the description for Card 1.' },
+  //   { title: 'Card 2', description: 'This is the description for Card 2.' },
+
+  //   { title: 'Card 2', description: 'This is the description for Card 2.' },
+  //   // Add more content items as needed
+  //   { title: 'Card 2', description: 'This is the description for Card 2.' },
+
+  //   { title: 'Card 2', description: 'This is the description for Card 2.' },
+
+  //   { title: 'Card 2', description: 'This is the description for Card 2.' },
+
+  // ];
+
   return (
     <div>
       <Header />
+      <HeroSection/>
       <Carousel/>
       <StickyScroll content={contentData} />
+      <StackCards/>
       {/* Rest of the landing page content */}
     </div>
   );
