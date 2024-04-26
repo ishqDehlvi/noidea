@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '@/components/Header';
 import Carousel from '@/components/Carousel';
 import { StickyScroll } from '@/components/StickyScrollReveal';
-import StackCards from '@/components/StackCards';
 import HeroSection from '@/components/Hero';
 
 
@@ -61,7 +60,6 @@ const HomePage: React.FC = () => {
       <HeroSection/>
       <Carousel/>
       <StickyScroll content={contentData} />
-      <StackCards/>
       {/* Rest of the landing page content */}
     </div>
   );
